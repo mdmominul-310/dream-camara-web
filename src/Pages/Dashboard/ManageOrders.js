@@ -39,7 +39,7 @@ const ManageOrders = () => {
     }
 
     const handleStatus = (orderId) => {
-
+        console.log(orderId)
         fetch(`https://shielded-citadel-89476.herokuapp.com/order?orderId=${orderId}`, {
             method: "put",
             headers: {

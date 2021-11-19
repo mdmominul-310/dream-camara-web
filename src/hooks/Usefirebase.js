@@ -18,7 +18,7 @@ const UseFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
     //create user using email password
     const createUserWithEmail = (email, password, name) => {
-        setIsLooding(true);
+        setIsLooding(true)
         createUserWithEmailAndPassword(auth, email, password, name)
             .then(result => {
                 const newUser = result.user;
@@ -30,12 +30,13 @@ const UseFirebase = () => {
                     .then(() => {
                         saveUser(user.displayName, user.email)
                     })
+                    .finally(setIsLooding(false))
             })
             .catch(error => {
                 setError(error)
                 console.log(error)
             })
-
+            .finally(setIsLooding(false))
     }
     //signin user with email and password
     const signInWithEmail = (email, password, from) => {
@@ -49,7 +50,7 @@ const UseFirebase = () => {
 
             })
             .catch(error => console.log(error))
-
+            .finally(setIsLooding(false))
     }
     //signIn with Google 
     const signInWithGoogle = () => {
@@ -61,6 +62,7 @@ const UseFirebase = () => {
                 setIsLooding(false)
             })
             .then(error => setError(error))
+            .finally(setIsLooding(false))
     }
 
     //signIn with Facebook
@@ -73,6 +75,7 @@ const UseFirebase = () => {
                 setIsLooding(false);
             })
             .catch(error => setError(error))
+            .finally(setIsLooding(false))
     }
     //auth state change 
     useEffect(() => {
@@ -81,12 +84,14 @@ const UseFirebase = () => {
             if (user) {
 
                 setUser(user)
-                // saveUser(user.displayName, user.email)
+                saveUser(user.displayName, user.email)
                 setIsLooding(false);
 
-            } else {
 
+            } else {
+                // setIsLooding(false)
             }
+            setIsLooding(false)
         });
     }, [auth])
     const saveUser = (displayName, email) => {
@@ -113,6 +118,7 @@ const UseFirebase = () => {
 
             })
             .catch(error => console.log(error))
+            .finally(setIsLooding(false))
     }
 
     //for admin validate
@@ -128,11 +134,12 @@ const UseFirebase = () => {
 
                 }
                 else {
-                    setisAdmin(false)
+                    // setisAdmin(false)
                 }
 
             })
     }, [user])
+
 
     return {
         createUserWithEmail,

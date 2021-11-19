@@ -18,12 +18,12 @@ const MyOrder = () => {
 
     useEffect(() => {
         const url = `https://shielded-citadel-89476.herokuapp.com/order?email=${user.email}`
-        console.log(url)
+
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user]);
-    console.log(orders)
+
     const confirmDelete = () => {
         fetch(`https://shielded-citadel-89476.herokuapp.com/order?id=${deleteItem}`, {
             method: "DELETE",
