@@ -1,7 +1,7 @@
-.App {
-  text-align: center;
-}
 
+body{
+  background-color: rgba(0, 0, 0, 0.788);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -23,9 +23,82 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.bg-style{
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0.450));
+}
 .App-link {
   color: #61dafb;
+}
+.bg-products{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.450),rgba(0, 0, 0, 0.89));
+}
+.footer-bg{
+  background-color: rgba(0, 0, 0, 0.274);
+}
+.footer-nav{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.527);
+  display: block;
+  margin: 15px 10px 10px 10px;
+  font-weight: 700;
+
+
+}
+.login-form{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.877),rgba(0, 0, 0, 0.534))
+}
+.not-found{
+  height: 100vh;
+}
+.not-found-wrapper{
+  position: absolute;
+  top:40%;
+  left: 40%;
+}
+.not-found-wrapper span{
+  color:red;
+  font-size: 5rem;
+}
+.shop-wrapper{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.884),rgba(0, 0, 0, 0.527));
+}
+.bg-review{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.884),rgba(0, 0, 0, 0.671)); ;
+}
+.about-bg{
+  background-image: linear-gradient(rgb(13, 3, 32),rgb(53, 2, 33));
+  height:100vh;
+  color:aliceblue;
+}
+
+.about-banner{
+background-color: black;
+
+
+
+}
+.about-banner img{
+  opacity: .5;
+ width:100%;
+ 
+}
+@media only screen and (max-width: 600px) {
+  .banner-element{
+    position: absolute;
+    top:12%;
+    left: 40%;
+    color:rgba(24, 228, 17, 0.603);
+  }
+}
+
+@media only screen and (min-width: 992px) {.banner-element{
+  position: absolute;
+  top:50%;
+  left: 40%;
+  color:rgba(24, 228, 17, 0.603);
+}}
+.admin-dashboard:hover{
+opacity: .8;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +109,4 @@
     transform: rotate(360deg);
   }
 }
+
